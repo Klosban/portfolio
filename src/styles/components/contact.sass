@@ -1,0 +1,72 @@
+@use '../variables'
+@use '../mixins'
+    
+.contact
+    text-align: center
+    @include mixins.center
+    flex-direction: column
+
+    h1
+        font-size: variables.$fs-title
+        margin-bottom: 2em
+
+.contact-cards
+    display: flex
+    justify-content: center
+    flex-wrap: wrap
+    max-width: 100vw
+    margin-bottom: 2em
+
+    .card
+        display: flex
+        flex-direction: column
+        align-items: center
+        flex-wrap: wrap
+        background-color: transparent
+        border: 2px solid variables.$border-color
+        width: 260px
+        height: 140px
+        margin: 0 2em
+        border-radius: variables.$border-radius
+        transition: .5s
+        color: variables.$text-color
+        margin-bottom: 2em
+        padding: 1.3em
+        position: relative
+
+        &:hover
+            border-color: variables.$primary-color
+            opacity: .7
+
+        svg
+            font-size: 3em
+            color: variables.$primary-color
+
+        p
+            font-size: 1em
+            font-weight: 600
+            margin-top: 1.3em
+
+.cards-link
+    display: flex
+    align-items: center
+    margin-bottom: 3em
+
+    svg, img
+        border: 2px solid variables.$border-color
+        border-radius: 100%
+        font-size: 3.5em
+        padding: .2em
+        @include mixins.center
+        margin-right: .5em
+
+        &:hover
+            border-color: variables.$primary-color
+
+    img
+        max-width: 56px
+
+    #linkedin
+        color: #0073B1
+    #github
+        color: #121312

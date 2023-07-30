@@ -1,0 +1,22 @@
+@use 'variables'
+
+@mixin btn
+    padding: .5em 1.2em
+    border: 1px solid variables.$primary-color
+    color: variables.$text-color
+    background-color: variables.$primary-color
+    text-decoration: none
+    border-radius: variables.$border-radius
+
+    &:hover 
+        background-color: transparent
+        color: variables.$primary-color
+
+@mixin center
+    display: flex
+    justify-content: center
+    align-items: center
+
+@mixin mobile
+    @media (max-width: 425px)
+        @content

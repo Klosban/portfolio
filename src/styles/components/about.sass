@@ -1,0 +1,83 @@
+@use '../variables'
+@use '../mixins'
+
+.about 
+    margin: 2em
+    height: 80vh
+    padding-top: 5rem
+
+    @include mixins.mobile
+        height: 90vh
+
+    @include mixins.mobile
+        padding-top: 4rem
+        margin: .8em
+
+    h2
+        font-size: 2.5em
+
+        @include mixins.mobile
+            font-size: 1.5em
+
+    h3
+        font-size: 2em
+
+        @include mixins.mobile
+            font-size: 1.6em
+
+        span
+            position: relative
+            padding-right: .5em
+
+        span::after
+            content: '|'
+            position: absolute
+            right: 0
+            background-color: variables.$background-color
+            width: 100%
+            animation: typing 2.5s steps(10) infinite alternate, line .5s infinite
+
+    p
+        max-width: 46vw
+        font-size: .8em
+        margin-bottom: 2em
+
+        @include mixins.mobile
+            max-width: 90vw
+            margin-bottom: 5em
+
+.cards-link
+    display: flex
+    align-items: center
+    margin-bottom: 3em
+
+    svg, img
+        border: 2px solid variables.$border-color
+        border-radius: 100%
+        font-size: 3.5em
+        padding: .2em
+        @include mixins.center
+        margin-right: .5em
+
+        &:hover
+            border-color: variables.$primary-color
+
+    img
+        max-width: 56px
+
+    #linkedin
+        color: #0073B1
+    #github
+        color: #121312
+
+.btn 
+    @include mixins.btn
+
+
+@keyframes typing
+    to
+        width: 0%
+
+@keyframes line
+    50%
+        color: transparent

@@ -1,10 +1,20 @@
 import '../styles/components/about.sass'
 import { BiLogoLinkedin, BiLogoGithub } from 'react-icons/bi'
 import XLogo from '../img/x-logo.png'
+import PDFFile from '../pdf/EduardoCordeiro-curriculo-fullstack.pdf'
 
 import Fade from 'react-reveal/Fade'
 
 const About = () => {
+  const handleDownload = () => {
+    const link = document.createElement('a');
+    link.href = PDFFile
+
+    link.download = 'EduardoCordeiro-curriculo-fullstack.pdf'
+
+    link.click()
+  }
+
   return (
     <Fade top>
     <div className='about' id='about'>
@@ -18,7 +28,7 @@ const About = () => {
           <a id='github' href="https://github.com/Klosban" target='_blank'><BiLogoGithub /></a>
           <a id='x' href="https://x.com/Klosban" target='_blank'><img src={XLogo} alt="X" /></a>
         </div>
-        <a href="" className='btn'>Download CV</a>
+        <a href="#" className='btn' onClick={handleDownload}>Download CV</a>
     </div>
     </Fade>
   )
